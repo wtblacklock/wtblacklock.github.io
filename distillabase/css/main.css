@@ -1,15 +1,214 @@
 
 /* ==========================================================================
-   Base styles:
-   ========================================================================== */
-/* Fix to include padding and border in the total width for each element */
+Base styles:
+========================================================================== */
 * {
   box-sizing: border-box;
 }
-
-/* Fix for responsive images */
 img {
   max-width: 100%;
 }
+body {
+  background-color: #4d00ff;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60em;
+}
+/* ==========================================================================
+Typography:
+========================================================================== */
+h1{
+  font-family: 'Roboto Slab', serif;
+  font-size: 3em;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  margin: 10px 0 10px 0px;
+}
+
+/* ==========================================================================
+Navigation:
+========================================================================== */
+.nav-wrapper {
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+nav {
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: inline-block;
+  margin: 1rem;
+  padding: .25rem 0;
+  text-decoration: none;
+  color: #fff;
+  transition: all .3s ease-in-out;
+  text-transform: uppercase;
+}
 
 
+.hamburger-icon {
+  margin: 3em auto;
+  width: 2.5rem;
+  display: block;
+  position: relative;
+  height: 30px;
+  display: none;
+}
+
+.hamburger-icon:hover,
+.hamburger-icon:active,
+.hamburger-icon:focus {
+  outline: 0;
+}
+
+
+.line:nth-child(1) {
+  top: 0;
+}
+
+.line:nth-child(2) {
+  top: 12px;
+}
+
+.line:nth-child(3) {
+  top: 24px;
+}
+
+.line {
+  width: 2.5rem;
+  height: .3125rem;
+  background: #E7E6DD;
+  border-radius: 2.5rem;
+  position: absolute;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.active .line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-16px);
+
+}
+
+.active .line:first-child {
+  transform: translateY(12px) rotate(135deg);
+}
+
+.active .line:last-child {
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+
+/* ==========================================================================
+Arrow Navigation:
+========================================================================== */
+
+
+
+/* ==========================================================================
+Scroll Navigation:
+========================================================================== */
+.arrow-nav {
+  display: inline-grid;
+  position: absolute;
+  right: 40px;
+}
+.arrow-nav a{
+  color: #ffffff;
+  font-size: 3em;
+}
+
+/* ==========================================================================
+Center Content:
+========================================================================== */
+.center-home {
+  max-width: 50%;
+  display: none;
+}
+.center-about {
+  max-width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-scroll {
+  max-width: 40%;
+  overflow-y: scroll;
+  height: 400px;
+  margin-left: 30px;
+}
+.about-img {
+  max-width: 50%;
+}
+.about-img img {
+  max-height: 100%;
+}
+
+/* ==========================================================================
+Footer:
+========================================================================== */
+#lower-left {
+	position: absolute;
+	bottom: 0%;
+	left: 0;
+  margin: 1rem;
+  padding: .25rem 0;
+}
+
+.title {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.share {
+  display: inline-block;
+  color: #fff;
+}
+
+.share a{
+  cursor: pointer;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+}
+.social-tw {
+  display:inline;
+  margin-right:20px
+}
+.social-fb {
+  display:inline;
+  margin-right:10px
+}
+
+.app-store {
+  display:block;
+  margin-top: 1em;
+}
