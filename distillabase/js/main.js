@@ -1,52 +1,71 @@
-// GLOBAL VARIABLES -------
 
-// The images array should hold 6 objects. Refer to the cheatsheet
+// $('nav a').on('click', function (e) {
+// 	e.preventDefault();
+// })
+
 var pages = [
 	{
-		src:'images/image_1.jpg',
+		class:'.center-home',
 },
 	{
-		src:'images/image_2.jpg',
+		class:'.center-features',
 },
 	{
-		src:'images/image_3.jpg',
-},
-	{
-		src:'images/image_4.jpg',
-},
-	{
-		src:'images/image_5.jpg',
-		cap:'Leather Notebook'
-},
-	{
-		src:'images/image_6.jpg',
-		cap:'Box with Type'
-	}
+		class:'.list-container',
+}
 ];
 
-// Set a variable for the current position(index) and give it an initial value of 0
 var indexNumber = 0;
 
+$('#next').on('click', function (e) {
+	e.preventDefault();
+		console.log(indexNumber);
 
-// Every 3 seconds this code will run
+		if (indexNumber < 2) {
+			indexNumber += 1;
+		} else {
+			indexNumber = 0;
+		}
 
-setInterval(function () {
-	console.log(indexNumber);
-
-	// Update the current position
-	if (indexNumber < 5) {
-		indexNumber += 1;
-	} else {
-		indexNumber = 0;
-	}
-
-$('#image-to-vote-on').attr('src',images[0].src, images[1].src, images[2].src, images[3].src, images[5].src, images[6].src)
-	// Update the src attribute of the image to the url that's stored within the
-	// src property for the object at the indexNumber in the array
-	// Hint: to update the src: $('yourSelectorHere').attr('src', arrayName[indexNumber].propertyName)
+	$('.page').hide();
+	$('.center-features').css("display", "flex") .hide();
+	$(pages[indexNumber].class).fadeIn();
+})
 
 
-}, 3000);
+$('#prev').on('click', function (e) {
+	e.preventDefault();
+		console.log(indexNumber);
+
+		if (indexNumber > 0) {
+			indexNumber -= 1;
+		} else {
+			indexNumber = 2;
+		}
+
+	$('.page').hide();
+	$('.center-features').css("display", "flex") .hide();
+	$(pages[indexNumber].class).fadeIn();
+})
+
+
+$('#about').on('click', function() {
+    $('.drawer-about').addClass('active');
+});
+
+$('.close').on('click', function() {
+    $('.drawer-about').removeClass('active');
+});
+
+$('#notify').on('click', function() {
+    $('.drawer-notify').addClass('active');
+});
+
+$('.close').on('click', function() {
+    $('.drawer-notify').removeClass('active');
+});
+
+
 
 // When the user clicks on the hamburger-icon
 $('.hamburger-icon').on('click', function (e) {
