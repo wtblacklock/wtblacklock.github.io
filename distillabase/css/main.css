@@ -8,21 +8,24 @@ Base styles:
 img {
   max-width: 100%;
 }
+
 body {
   background-color: #e4f1fd;
   color: #297fca;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto';
+  font-family: 'Raleway';
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
   font-size: 1.2em;
+  line-height: 1.5em;
 }
+
 .align {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 54em;
+  min-height: 48em;
 }
 
 button {
@@ -36,13 +39,13 @@ button {
 /* ==========================================================================
 Typography:
 ========================================================================== */
-h1{
-  font-family: 'Roboto', serif;
-  font-size: 3em;
+h1, h2, h3, h4{
+  font-family: 'Josefin Slab', serif;
+  font-size: 2.85em;
   color: #297fca;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  margin: 10px 0 10px 0px;
+  margin: 20px 0 20px 0px;
 }
 
 /* ==========================================================================
@@ -61,7 +64,7 @@ nav {
   position: relative;
   width: 100%;
   text-align: left;
-}
+  }
 
 nav ul {
 	margin: 0;
@@ -75,8 +78,10 @@ nav li {
 nav a {
   display: inline-block;
   margin: 1rem;
+  font-size: .75em;
   padding: .25rem 0;
   text-decoration: none;
+  font-family: 'Raleway';
   color: #297fca;
   transition: all .3s ease-in-out;
   text-transform: uppercase;
@@ -258,13 +263,28 @@ Center Content:
   display: none;
 }
 
-.features-img {
-  max-width: 20%;
+.features-img  {
+  max-width: 22%;
+  box-shadow: -8px 17px 77px -5px rgba(0,0,0,0.3);
+  height: 458px;
 }
 
-.features-img img {
+
+/*.features-img  {
+background:url('/images/still-comp-profile.png') -25px -50px;
+position:fixed ;
+max-width: 20%;
+top:0;
+width:100%;
+z-index:0;
+  height:100%;
+  background-size: calc(100% + 50px);
+}*/
+
+
+/*.features-img img {
   max-height: 100%;
-}
+}*/
 
 .features-container {
   position: relative;
@@ -292,28 +312,39 @@ Center Content:
   pointer-events: none;
 }
 
+.features:before, .map:before, .discover:before, .map:before, .embibe:before, .share:before {
+  content:"";
+  display:block;
+  height:2px; /* fixed header height*/
+  margin:-2px 0 0; /* negative fixed header height */
+}
+
 .features-scroll {
   max-width: 11%;
   height: 400px;
   margin: 0 10px 0 10px;
 }
 
-      #style-4::-webkit-scrollbar-track
-      {
-      	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-      	background-color: #F5F5F5;
+      ::-webkit-scrollbar {
+      width: 15px;
       }
 
-      #style-4::-webkit-scrollbar
-      {
-      	width: 10px;
-      	background-color: #F5F5F5;
+      /* Track */
+      ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
       }
 
-      #style-4::-webkit-scrollbar-thumb
-      {
-      	background-color: #000000;
-      	border: 2px solid #555555;
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 1px;
+      border-radius: 1px;
+      background: rgba(0,0,0,0.2);
+      -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+      }
+      ::-webkit-scrollbar-thumb:window-inactive {
+      background: rgba(0,0,0,0.2);
       }
 
 
@@ -348,6 +379,12 @@ Center Content:
   direction: ltr;
   padding: 10px 0px 0 10px;
   margin-left: 31px;
+}
+
+.list-img  {
+  max-width: 22%;
+  box-shadow: -8px 17px 77px -5px rgba(0,0,0,0.3);
+  height: 458px;
 }
 
 /* ==========================================================================
